@@ -1,0 +1,20 @@
+========================================
+PUDA Training Launcher
+Timestamp: Fri May 29 20:35:02     2026
+GPU_ID: 0
+Project: /d/ChemBL/PAINSBench
+Python: /e/anaconda/python
+PyTorch: 2.5.1
+CUDA: True
+  File "<string>", line 1
+    import torch; print(torch.cuda.get_device_name(0) if torch.cuda.is_available() else \"N/A\")
+                                                                                         ^
+SyntaxError: unexpected character after line continuation character
+GPU: 
+========================================
+
+[Fri May 29 20:35:07     2026] Starting PUDA training (attempt 1)...
+  File "D:\ChemBL\PAINSBench\scripts\19_puda.py", line 65
+    mol=Chem.MolFromSmiles(smi)
+    ^
+IndentationError: expected an indented block after 'for' statement on line 64

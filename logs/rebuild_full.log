@@ -1,0 +1,110 @@
+============================================================
+1. Loading & filtering activity data...
+============================================================
+  Loaded activity_target_joined_part001.csv, 458,735 filtered so far
+  Loaded activity_target_joined_part002.csv, 805,577 filtered so far
+  Loaded activity_target_joined_part003.csv, 811,452 filtered so far
+  Loaded activity_target_joined_part004.csv, 820,265 filtered so far
+  Loaded activity_target_joined_part005.csv, 995,014 filtered so far
+  Loaded activity_target_joined_part006.csv, 1,424,536 filtered so far
+  Loaded activity_target_joined_part007.csv, 1,874,323 filtered so far
+  Loaded activity_target_joined_part008.csv, 2,306,937 filtered so far
+  Loaded activity_target_joined_part009.csv, 2,740,902 filtered so far
+  Loaded activity_target_joined_part010.csv, 3,106,173 filtered so far
+
+Total filtered: 3,106,173
+Memory: 1346.6 MB
+  Time: 17.7s
+
+============================================================
+2. Annotating PAINS status...
+============================================================
+  Structural alerts: 936
+  Alert set mapping: alert_set_id 4 = PAINS (narrow)
+  Compound-alert mappings: 4,925,175
+  PAINS+ compounds: 68,855
+  PAINS+: 92,650 (3.0%)
+  PAINS-: 3,013,523 (97.0%)
+  Time: 1.5s
+
+============================================================
+3. Deduplicating compound-target pairs...
+============================================================
+  Before: 3,106,173 ¡ú After: 2,316,381 (removed 789,792)
+
+============================================================
+4. Per-target ¡Ý30 measurements filter...
+============================================================
+  Targets ¡Ý30: 4,219 / 10,857
+  Entries: 2,316,381 ¡ú 2,274,124
+  Unique targets: 4,219
+  Unique compounds: 1,223,432
+  Time: 2.1s
+
+============================================================
+5. Merging compound properties...
+============================================================
+  Properties table: 2,878,135 compounds
+  Unique compounds with properties: 2,878,135
+  After merge + dropna(smiles): 2,274,124 ¡ú 2,269,622
+  Time: 11.8s
+
+============================================================
+6. Loading & parsing molecular fingerprints...
+============================================================
+  Loading pre-computed fingerprints from D:\ChemBL\csv_output\chembl_36_fingerprints.csv
+  Unique compounds needing fingerprints: 1,221,445
+    Processed 200,000 fingerprint rows...
+    Processed 400,000 fingerprint rows...
+    Processed 600,000 fingerprint rows...
+    Processed 800,000 fingerprint rows...
+    Processed 1,000,000 fingerprint rows...
+    Processed 1,200,000 fingerprint rows...
+    Processed 1,400,000 fingerprint rows...
+    Processed 1,600,000 fingerprint rows...
+    Processed 1,800,000 fingerprint rows...
+    Processed 2,000,000 fingerprint rows...
+    Processed 2,200,000 fingerprint rows...
+    Processed 2,400,000 fingerprint rows...
+    Processed 2,600,000 fingerprint rows...
+    Processed 2,800,000 fingerprint rows...
+  Fingerprints loaded: 2,854,815 / 1,221,445
+  Building feature matrix (vectorized)...
+  Feature matrix: (2269622, 2048)
+  Labels: 2,269,622
+  PAINS+: 68,870 / PAINS-: 2,200,752
+  Time: 117.1s
+
+============================================================
+7. Saving full benchmark...
+============================================================
+  Saved: D:\ChemBL\PAINSBench\processed\benchmark_full.csv (2,269,622 rows)
+  Saved: D:\ChemBL\PAINSBench\processed\features_full.npz ((2269622, 2048))
+
+============================================================
+8. Creating DTA subsets (with protein sequences)...
+============================================================
+  SINGLE PROTEIN rows: 1,436,398
+  With sequences: 1,436,398 (dropped 0 without)
+  Saved: D:\ChemBL\PAINSBench\processed\benchmark_dta_full.csv (1,436,398 rows)
+  Ki: 393,746 rows ¡ú benchmark_dta_ki.csv
+    PAINS+: 5,894 / PAINS-: 387,852
+  IC50: 999,506 rows ¡ú benchmark_dta_ic50.csv
+    PAINS+: 16,883 / PAINS-: 982,623
+  SP-Ki: 393,746 rows ¡ú benchmark_sp_ki.csv
+  SP-IC50: 999,506 rows ¡ú benchmark_sp_ic50.csv
+  Time: 141.9s
+
+============================================================
+BUILD COMPLETE
+============================================================
+Total time: 292.3s
+
+Final Datasets:
+  benchmark_full.csv:      2,269,622 rows  (full unrestricted)
+  benchmark_dta_full.csv:  1,436,398 rows  (single-protein with seq)
+  benchmark_dta_ki.csv:     393,746 rows
+  benchmark_dta_ic50.csv:   999,506 rows
+  benchmark_sp_ki.csv:      393,746 rows
+  benchmark_sp_ic50.csv:    999,506 rows
+  features_full.npz:       (2269622, 2048)
