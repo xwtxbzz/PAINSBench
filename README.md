@@ -18,13 +18,4 @@
 
 ---
 
-## 📊 Evaluated Models
-
-|  Category  | Models |
-|--------------|--------|
-| **12 Baselines** | MLP-DTA, GCN-DTA, GAT-DTA, GATv2-DTA, AttFP-DTA, GIN-DTA, GINE-DTA, PNA-DTA, GT-DTA, GPS-DTA, SAGE-DTA, GEN-DTA |
-| **3 Frontier** | GS-DTA (GATv2-GCN + Transformer), Mamba-DTA (GraphTransformer + Mamba), TranGNN-DTA (Transformer protein encoder) |
-| **Mitigation** | PR-DTA (Pains-Resistant DTA) — dual-branch GNN with differentiable gated fusion |
-
----
 The dataset is too large to be hosted on GitHub. Researchers interested in obtaining the dataset are welcome to request access via email at wzs13141@gmail.com.
